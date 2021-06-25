@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StructureController;
+use App\Http\Controllers\PersonneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +23,8 @@ Route::get('/index', function () {
     return view('pages.index');
 });
 
-Route::get('/structure', function () {
-    return view('pages.structure');
-});
+Route::get('/structure', [StructureController::class,'index']);
+Route::post('/store', [StructureController::class,'store']);
 
+Route::get('/personne', [PersonneController::class,'index']);
+Route::post('/personne/store', [PersonneController::class,'store']);
