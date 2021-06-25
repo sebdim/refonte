@@ -23,7 +23,9 @@ class PersonneController extends Controller
      */
     public function create()
     {
-        //
+        $nbre = count(Personne::all());
+        $personne = Personne::all();
+        return view('pages.index',['personne' => $personne,'nbre' => $nbre]);
     }
 
     /**

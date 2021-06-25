@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('pages.index');
-});
+Route::get('/index',[PersonneController::class,'create']);
 
 Route::get('/structure', [StructureController::class,'index']);
 Route::post('/store', [StructureController::class,'store']);
