@@ -44,9 +44,6 @@ class PersonneController extends Controller
         ]);
 
         return back();
-       
-
-        
     }
 
     /**
