@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Personne;
+use Illuminate\Support\Facades\Redirect;
+
+
 class PersonneController extends Controller
 {
     /**
@@ -13,7 +16,7 @@ class PersonneController extends Controller
      */
     public function index()
     {
-        return view('pages.personne');
+        return view('pages.personne.personne');
     }
 
     /**
@@ -25,7 +28,7 @@ class PersonneController extends Controller
     {
         $nbre = count(Personne::all());
         $personne = Personne::all();
-        return view('pages.index',['personne' => $personne,'nbre' => $nbre]);
+        return view('pages.personne.liste',compact(['nbre','personne']));
     }
 
     /**
@@ -45,7 +48,7 @@ class PersonneController extends Controller
          'email' => $request -> email
         ]);
 
-        return back();
+        return redirect::route('personne.liste');
     }
 
     /**
@@ -54,9 +57,9 @@ class PersonneController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       
     }
 
     /**
@@ -67,7 +70,8 @@ class PersonneController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Personne::find($id);
+        return view('pages.personne.edit',compact(['data']));
     }
 
     /**
@@ -79,7 +83,16 @@ class PersonneController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = Personne::find($id);
+        $id -> nom = request('nom');
+        $id -> prenoms = request('prenoms');
+        $id -> titre = request('titre');
+        $id -> contacts = request('contact');
+        $id -> email = request('email');
+
+        $id -> save();
+
+        return redirect::route('personne.liste');
     }
 
     /**
@@ -90,6 +103,9 @@ class PersonneController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = Personne::find($id);
+        $id -> delete();
+
+        return redirect::route('personne.liste');
     }
 }

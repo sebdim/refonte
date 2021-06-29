@@ -1,11 +1,11 @@
 @extends('layouts.layout')
-@section('title','Personne | hello city')
+@section('title','Ajout | Personnes ressources')
 @section('content')
         <div class="content-body">
             <div class="container-fluid">
             <div class="row ">
                 <div class="col-lg-12">
-                    <h1 align="center">Enrgistrement</h1>
+                    <h1 align="center">Enrégistrement d'une personne ressource</h1>
                 </div>
             </div>
                 <div class="row justify-content-center">
@@ -14,41 +14,36 @@
                             <div class="card-body">
                            
                                 
-                                    <form class="form-valide" action="/personne/store" method="post">
+                                    <form class="form-valide" action="{{ route('personne.add')}}" method="post">
                                     @csrf
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="nom">Nom  <span class="text-danger">*</span>
-                                            </label>
+                                            <label class="col-lg-4 col-form-label" for="nom">Nom  </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom de la personne ressource">
+                                                <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom de la personne ressource" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="prenoms">Prénoms <span class="text-danger">*</span>
-                                            </label>
+                                            <label class="col-lg-4 col-form-label" for="prenoms">Prénoms </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="prenoms" name="prenoms" placeholder="Prénoms de la personne ressource">
+                                                <input type="text" class="form-control" id="prenoms" name="prenoms" placeholder="Prénoms de la personne ressource" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                        <label class="col-lg-4 col-form-label" for="titre">Titre <span class="text-danger">*</span>
-                                            </label>
+                                            <label class="col-lg-4 col-form-label" for="titre">Titre </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre de la personne ressource">
+                                                <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre de la personne ressource" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="contact">Contact <span class="text-danger">*</span>
-                                            </label>
+                                            <label class="col-lg-4 col-form-label" for="contact">Contact </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact de la personne ressource">
+                                                <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact de la personne ressource" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-4 col-form-label" for="email">E-mail <span class="text-danger">*</span>
-                                            </label>
+                                            <label class="col-lg-4 col-form-label" for="email">E-mail </label>
                                             <div class="col-lg-6">
-                                                <input type="email" class="form-control" id="email" name="email"  placeholder="E-mail de la personne ressource">
+                                                <input type="email" class="form-control" id="email" name="email"  placeholder="E-mail de la personne ressource" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">

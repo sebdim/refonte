@@ -14,7 +14,7 @@ class StructureController extends Controller
      */
     public function index()
     {
-        return view('pages.structure');
+        return view('pages.structure.structure');
     }
 
     /**

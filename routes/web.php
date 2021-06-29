@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -19,10 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index',[PersonneController::class,'create']);
+//Route::get('/index',[PersonneController::class,'create'])->name('index');
 
 Route::get('/structure', [StructureController::class,'index']);
-Route::post('/store', [StructureController::class,'store']);
+Route::post('/Structure/store', [StructureController::class,'store']);
 
-Route::get('/personne', [PersonneController::class,'index']);
-Route::post('/personne/store', [PersonneController::class,'store']);
+Route::get('/personne', [PersonneController::class,'index'])->name('personne.index');
+Route::post('/personne/store', [PersonneController::class,'store'])->name('personne.add');
+Route::get('/personne/liste',[PersonneController::class,'create'])->name('personne.liste');
+Route::get('/personne/edit-{data}', [PersonneController::class, 'edit'])->name('personne.edit');
+Route::post('/personne/update-{data}', [PersonneController::class, 'update'])->name('personne.update');
+Route::get('/personne/delete-{data}', [PersonneController::class, 'destroy'])->name('personne.delete');
