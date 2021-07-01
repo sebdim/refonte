@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\PersonneController;
 use App\Http\Controllers\MissionController;
+use App\Http\Controllers\SollicitationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,3 +42,12 @@ Route::get('/mission/liste',[MissionController::class,'create'])->name('mission.
 Route::get('/mission/edit-{data}', [MissionController::class, 'edit'])->name('mission.edit');
 Route::post('/mission/update-{data}', [MissionController::class, 'update'])->name('mission.update');
 Route::get('/mission/delete-{data}', [MissionController::class, 'destroy'])->name('mission.delete');
+
+
+//Routes for sollicitations
+Route::get('/sollicitation', [SollicitationController::class,'index'])->name('sollicitation.index');
+Route::post('/sollicitation/store', [SollicitationController::class,'store'])->name('sollicitation.add');
+Route::get('/sollicitation/liste',[SollicitationController::class,'create'])->name('sollicitation.liste');
+Route::get('/sollicitation/edit-{data}', [SollicitationController::class, 'edit'])->name('sollicitation.edit');
+Route::post('/sollicitation/update-{data}', [SollicitationController::class, 'update'])->name('sollicitation.update');
+Route::get('/sollicitation/delete-{data}', [SollicitationController::class, 'destroy'])->name('sollicitation.delete');

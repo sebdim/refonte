@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sollicitation extends Model
 {
+    protected $fillable = ['nombre_de_volontaires_sollicites','nombre_de_volontaires_recus'] ;
     use HasFactory;
 }

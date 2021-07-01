@@ -107,7 +107,12 @@ class MissionController extends Controller
         
 
         $mission = Mission::find($id);
-        //dd($mission);
+        $request->validate([
+            'titre' => 'required',
+            'etat' => 'required',
+            'date_debut' => 'required|after_or_equal:today',
+            'date_fin' => 'required'
+        ]);
         $mission->titre = request('titre');
         $mission->etat = request('etat');
         $mission->date_debut = request('date_debut');
