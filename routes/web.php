@@ -19,7 +19,7 @@ use App\Http\Controllers\SollicitationController;
 */
 
 Route::get('/', function () {
-    return view('layouts.layout');
+    return view('layouts.exemple');
 });
 
 //Route::get('/index',[PersonneController::class,'create'])->name('index');
