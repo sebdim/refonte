@@ -37,7 +37,7 @@
                                         <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="contact">Contact </label>
                                             <div class="col-lg-6">
-                                                <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact de la personne ressource" required>
+                                                <input type="tel" class="form-control" id="contact" name="contact" placeholder="99 99 99 99" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">

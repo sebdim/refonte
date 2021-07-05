@@ -19,13 +19,17 @@ use App\Http\Controllers\SollicitationController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.layout');
 });
 
 //Route::get('/index',[PersonneController::class,'create'])->name('index');
 
-Route::get('/structure', [StructureController::class,'index']);
-Route::post('/Structure/store', [StructureController::class,'store']);
+Route::get('/structure', [StructureController::class,'create'])->name('structure.index');
+Route::post('/structure/store', [StructureController::class,'store'])->name('structure.add');
+Route::get('/structure/liste',[StructureController::class,'index'])->name('structure.liste');
+Route::get('/structure/edit-{data}', [StructureController::class, 'edit'])->name('structure.edit');
+Route::post('/structure/update-{data}', [StructureController::class, 'update'])->name('structure.update');
+Route::get('/structure/delete-{data}', [StructureController::class, 'destroy'])->name('structure.delete');
 
 //routes for personne
 Route::get('/personne', [PersonneController::class,'index'])->name('personne.index');

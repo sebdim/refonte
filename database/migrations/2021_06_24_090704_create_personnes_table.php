@@ -18,7 +18,7 @@ class CreatePersonnesTable extends Migration
             $table->string('nom');
             $table->string('prenoms');
             $table->string('titre');
-            $table->integer('contacts');
+            $table->string('contacts');
             $table->string('email');
             $table->timestamps();
         });

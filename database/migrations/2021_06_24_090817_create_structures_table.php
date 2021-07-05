@@ -15,10 +15,6 @@ class CreateStructuresTable extends Migration
     {
         Schema::create('structures', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('mission_id')->nullable();
-            $table->foreign('mission_id')->references('id')->on('missions');
-            $table->unsignedBigInteger('sollicitation_id')->nullable();
-            $table->foreign('sollicitation_id')->references('id')->on('sollicitations');
             $table->unsignedBigInteger('personne_id');
             $table->foreign('personne_id')->references('id')->on('personnes');
             $table->string('nom');
@@ -28,8 +24,8 @@ class CreateStructuresTable extends Migration
             $table->string('prefecture');
             $table->string('region');
             $table->string('type_structure');
-            $table->enum('evaluation',['oui','non']);
-            $table->enum('convention',['oui','non']);
+            $table->string('evaluation');
+            $table->string('convention');
             $table->string('reference_convention')->nullable();
             $table->string('statut_juridique');
             $table->string('guide');

@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Structure;
+use App\Models\Personne;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+
 
 class StructureController extends Controller
 {
@@ -14,7 +17,8 @@ class StructureController extends Controller
      */
     public function index()
     {
-        return view('pages.structure.structure');
+        $structure = Structure::paginate(10);
+        return view('pages.structure.liste',compact(['structure']));
     }
 
     /**
@@ -25,6 +29,8 @@ class StructureController extends Controller
     public function create()
     {
         //
+        $personne = Personne::all();
+        return view('pages.structure.structure',compact(['personne']));
     }
 
     /**
@@ -37,17 +43,38 @@ class StructureController extends Controller
     {
         $request->validate([
             'nom' => 'required',
+            'personne' => 'required',
+            'sigle' => 'required',
+            'domaine' => 'required',
+            'localite'=> 'required',
+            'prefecture'=>'required',
+            'region' => 'required',
+            'type' => 'required',
+            'evaluation' => 'required',
+            'convention' => 'required',
+            'reference' => 'required_if:convention,oui',
+            'statut'=>'required',
+            'guide' => 'required'
+            
+        ]); 
+
+        Structure::create([
+            'nom' => request('nom'),
+            'personne_id' => request('personne'),
+            'sigle' => request('sigle'),
+            'domaine' => request('domaine'),
+            'localite' => request('localite'),
+            'prefecture' => request('prefecture'),
+            'region' => request('region'),
+            'type_structure' => request('type'),
+            'evaluation' => request('evaluation'),
+            'convention' => request('convention'),
+            'reference_convention' => request('reference'),
+            'statut_juridique' => request('statut'),
+            'guide' => request('guide')
         ]);
 
-        $query = DB::table('structures')->insert([
-            'nom' => $request->input('nom'),
-        ]);
-
-        if ($query) {
-            return back()->with('success','data successfully');
-        } else {
-            return back()->with('fail','something went wrong');
-        }
+        return redirect::route('structure.liste');
     }
 
     /**
@@ -69,7 +96,9 @@ class StructureController extends Controller
      */
     public function edit($id)
     {
-        //
+        $personne = Personne::all();
+        $data = Structure::find($id);
+        return view('pages.structure.edit',compact(['data','personne']));
     }
 
     /**
@@ -81,7 +110,43 @@ class StructureController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $structure = Structure::find($id);
+        $request->validate([
+            'nom' => 'required',
+            'personne' => 'required',
+            'sigle' => 'required',
+            'domaine' => 'required',
+            'localite'=> 'required',
+            'prefecture'=>'required',
+            'region' => 'required',
+            'type' => 'required',
+            'evaluation' => 'required',
+            'convention' => 'required',
+            'reference' => 'required_if:convention,oui',
+            'statut'=>'required',
+            'guide' => 'required'
+            
+        ]); 
+
+    
+        $structure->nom = request('nom');
+        $structure->personne_id = request('personne');
+        $structure->sigle = request('sigle');
+        $structure->domaine = request('domaine');
+        $structure->localite = request('localite');
+        $structure->prefecture = request('prefecture');
+        $structure->region = request('region');
+        $structure->type_structure = request('type');
+        $structure->evaluation = request('evaluation');
+        $structure->convention = request('convention');
+        $structure->reference_convention = request('reference');
+        $structure->statut_juridique = request('statut');
+        $structure->guide = request('guide');
+
+        dd($structure);
+        $structure->save();
+
+        return redirect::route('structure.liste');
     }
 
     /**
@@ -92,6 +157,9 @@ class StructureController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = Structure::find($id);
+        $id -> delete();
+
+        return redirect::route('structure.liste');
     }
 }
