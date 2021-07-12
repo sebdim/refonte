@@ -15,6 +15,8 @@ class CreateSollicitationsTable extends Migration
     {
         Schema::create('sollicitations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('structure_id')->nullable();
+            $table->foreign('structure_id')->references('id')->on('structures');
             $table->integer('nombre_de_volontaires_sollicites');
             $table->integer('nombre_de_volontaires_recus')->nullable();
             $table->timestamps();

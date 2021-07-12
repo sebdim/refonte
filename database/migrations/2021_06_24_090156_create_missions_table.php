@@ -15,6 +15,8 @@ class CreateMissionsTable extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('structure_id')->nullable();
+            $table->foreign('structure_id')->references('id')->on('structures');
             $table->string('etat');
             $table->string('titre');
             $table->date('date_debut')->nullable();

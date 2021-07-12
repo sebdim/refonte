@@ -15,13 +15,11 @@ class CreateCandidatsTable extends Migration
     {
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('structure_id')->nullable();
-            $table->foreign('structure_id')->references('id')->on('structures');
             $table->string('nom');
             $table->string('prenoms');
             $table->date('date_de_naissance');
-            $table->enum('sexe', ['Masculin', 'Feminin']);
-            $table->enum('handicap', ['oui', 'non']);
+            $table->string('sexe');
+            $table->string('handicap');
             $table->string('lieu_de_residence');
             $table->integer('contacts');
             $table->string('email');
@@ -33,7 +31,7 @@ class CreateCandidatsTable extends Migration
             $table->string('jury');
             $table->string('decision_jury');
             $table->date('date_entretien');
-            $table->enum('formation', ['oui', 'non']);
+            $table->string('formation');
             $table->date('date_formation')->nullable();
             $table->string('statut');
             $table->string('ancienne_structure')->nullable();
