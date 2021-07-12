@@ -332,9 +332,24 @@
     <script src="{{asset('plugins/chartist/js/chartist.min.js')}}"></script>
     <script src="{{asset('plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
 
+    <script src="{{asset('plugins/moment/moment.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')}}"></script>
+    <!-- Clock Plugin JavaScript -->
+    <script src="{{asset('plugins/clockpicker/dist/jquery-clockpicker.min.js')}}"></script>
+    <!-- Color Picker Plugin JavaScript -->
+    <script src="{{asset('plugins/jquery-asColorPicker-master/libs/jquery-asColor.js')}}"></script>
+    <script src="{{asset('plugins/jquery-asColorPicker-master/libs/jquery-asGradient.js')}}"></script>
+    <script src="{{asset('plugins/jquery-asColorPicker-master/dist/jquery-asColorPicker.min.js')}}"></script>
+    <!-- Date Picker Plugin JavaScript -->
+    <script src="{{asset('plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    <!-- Date range Plugin JavaScript -->
+    <script src="{{asset('plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
 
+    <script src="{{asset('js/plugins-init/form-pickers-init.js')}}"></script>
 
     <script src="{{asset('js/dashboard/dashboard-1.js')}}"></script>
+
 
 </body>
 

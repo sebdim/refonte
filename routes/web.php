@@ -6,6 +6,8 @@ use App\Http\Controllers\StructureController;
 use App\Http\Controllers\PersonneController;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\SollicitationController;
+use App\Http\Controllers\CandidatController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,8 @@ Route::get('/', function () {
     return view('layouts.exemple');
 });
 
-//Route::get('/index',[PersonneController::class,'create'])->name('index');
 
+//routes for structure
 Route::get('/structure', [StructureController::class,'create'])->name('structure.index');
 Route::post('/structure/store', [StructureController::class,'store'])->name('structure.add');
 Route::get('/structure/liste',[StructureController::class,'index'])->name('structure.liste');
@@ -55,3 +57,12 @@ Route::get('/sollicitation/liste',[SollicitationController::class,'create'])->na
 Route::get('/sollicitation/edit-{data}', [SollicitationController::class, 'edit'])->name('sollicitation.edit');
 Route::post('/sollicitation/update-{data}', [SollicitationController::class, 'update'])->name('sollicitation.update');
 Route::get('/sollicitation/delete-{data}', [SollicitationController::class, 'destroy'])->name('sollicitation.delete');
+
+
+//Routes for candidat
+Route::get('/candidat', [CandidatController::class,'create'])->name('candidat.index');
+Route::post('/candidat/store', [CandidatController::class,'store'])->name('candidat.add');
+Route::get('/candidat/liste',[CandidatController::class,'index'])->name('candidat.liste');
+Route::get('/candidat/edit-{data}', [CandidatController::class, 'edit'])->name('candidat.edit');
+Route::post('/candidat/update-{data}', [CandidatController::class, 'update'])->name('candidat.update');
+Route::get('/candidat/delete-{data}', [CandidatController::class, 'destroy'])->name('candidat.delete');
