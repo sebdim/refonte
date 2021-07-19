@@ -262,14 +262,54 @@
         <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                    <li class="nav-label">Dashboard</li>
+                    <li>
+                        <ul aria-expanded="false">
+                            <li><a href="">Home 1</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label"><strong>Personnes</strong></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Personnes ressources</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./index.html">Home 1</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+                            <li><a href="{{ route('personne.liste')}}">Liste</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label"><strong>Candidats</strong></li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Candidats</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('candidat.liste')}}">Liste</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label"><strong>Structures</strong></li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Structures</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('structure.liste')}}">Liste</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label"><strong>Affectations</strong></li>
+                    <li>
+                        <!-- <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Affectations</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="">Liste</a></li>
+                        </ul> -->
+                    </li>
+                    <li class="nav-label"><strong>Missions</strong></li>
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Missions</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="{{ route('mission.liste')}}">Liste</a></li>
                         </ul>
                     </li>
                 </ul>
