@@ -23,6 +23,18 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
+                                            <label class="col-lg-4 col-form-label" for="structure">Structure <span class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control" id="structure" name="structure" value="{{old('structure')}}"> 
+                                                    <option value="">Choisir la structure</option>
+                                                    @foreach ($structure as $structure)
+                                                        <option value="{{$structure->id}}">{{$structure-> nom}} </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label class="col-lg-4 col-form-label" for="etat">Etat de la mission  </label>
                                             <div class="col-lg-6">
                                                 <select class="form-control" id="etat" name="etat" value="{{old('etat')}}"> 

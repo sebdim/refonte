@@ -12,21 +12,6 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                            @if (Session::get('success'))
-                            <div class="alert alert-success">
-                                <div class="alert alert-success">
-                                    {{Session:get('success')}}
-                                </div>
-                            </div>
-                            @endif
-                            @if (Session::get('fail'))
-                            <div class="alert alert-success">
-                                <div class="alert alert-danger">
-                                    {{Session:get('fail')}}
-                                </div>
-                            </div>
-                            @endif
-                                
                                     <form class="form-valide" action="{{ route('structure.add')}}" method="post">
                                     @csrf
                                         <div class="form-group row">

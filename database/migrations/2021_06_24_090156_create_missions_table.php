@@ -17,7 +17,7 @@ class CreateMissionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('structure_id')->nullable();
             $table->foreign('structure_id')->references('id')->on('structures');
-            $table->string('etat');
+            $table->string('etat')->default('En cours');
             $table->string('titre');
             $table->date('date_debut')->nullable();
             $table->date('date_fin')->nullable();

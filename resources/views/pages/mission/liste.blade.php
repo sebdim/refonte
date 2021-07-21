@@ -21,6 +21,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>Titre</th>
+                                                    <th>Structure</th>
                                                     <th>Etat de la mission</th>
                                                     <th>Date de début</th>
                                                     <th>Date de fin</th>
@@ -31,6 +32,7 @@
                                             @foreach ($mission as $mission )
                                             <tr>
                                                 <td>{{ $mission -> titre }}</td>
+                                                <td>{{ $mission -> structure_id }}</td>
                                                 <td>{{ $mission -> etat }}</td>
                                                 <td>{{ $mission -> date_debut }}</td>
                                                 <td>{{ $mission -> date_fin }}</td>

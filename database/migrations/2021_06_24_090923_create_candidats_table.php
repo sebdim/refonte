@@ -34,9 +34,9 @@ class CreateCandidatsTable extends Migration
             $table->string('formation');
             $table->date('date_formation')->nullable();
             $table->string('statut');
-            $table->string('ancienne_structure')->nullable();
+           /*  $table->string('ancienne_structure')->nullable();
             $table->string('raison')->nullable();
-            $table->string('decision')->nullable();
+            $table->string('decision')->nullable(); */
             $table->timestamps();
         });
     }

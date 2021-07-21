@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
 use App\Models\Mission;
+use App\Models\Structure;
 use Illuminate\Support\Facades\Redirect;
 
 class MissionController extends Controller
@@ -17,7 +18,8 @@ class MissionController extends Controller
     public function index()
     {
         //
-        return view('pages.mission.mission');
+        $structure = Structure::all();
+        return view('pages.mission.mission',compact(['structure']));
     }
 
     /**
@@ -45,17 +47,19 @@ class MissionController extends Controller
         $request->validate([
             'titre' => 'required',
             'etat' => 'required',
-            'date_debut' => 'required|after_or_equal:today',
+            'structure' => 'required',
+            'date_debut' => 'required',
             'date_fin' => 'required'
         ]);
 
-       if ($request->fails()) {
+       /* if ($request->fails()) {
            return back()->withErrors($request)->withInput();
-       }
+       } */
         
         Mission::create([
             'titre' => request('titre'),
             'etat' => request('etat'),
+            'structure_id' => request('structure'),
             'date_debut' => request('date_debut'),
             'date_fin' => request('date_fin')
         ]);
@@ -110,11 +114,13 @@ class MissionController extends Controller
         $request->validate([
             'titre' => 'required',
             'etat' => 'required',
+            'structure' => 'required',
             'date_debut' => 'required|after_or_equal:today',
             'date_fin' => 'required'
         ]);
         $mission->titre = request('titre');
         $mission->etat = request('etat');
+        $mission->etat = request('structure');
         $mission->date_debut = request('date_debut');
         $mission->date_fin = request('date_fin');
         $mission->save();

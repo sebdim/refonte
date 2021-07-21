@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Personne;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 
 class PersonneController extends Controller
@@ -28,7 +29,8 @@ class PersonneController extends Controller
     {
         $nbre = count(Personne::all());
         $personne = Personne::all();
-        return view('pages.personne.liste',compact(['nbre','personne']));
+        $tous = DB::table('personnes')->paginate(1);
+        return view('pages.personne.liste',compact(['nbre','personne','tous']));
     }
 
     /**

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mission extends Model
 {
-    protected $fillable = ['titre','etat','date_debut','date_fin'] ;
+    protected $fillable = ['titre','etat','structure_id','date_debut','date_fin'] ;
 
     use HasFactory;
 }
