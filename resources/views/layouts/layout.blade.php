@@ -331,7 +331,7 @@
         <!--**********************************
             Footer start
         ***********************************-->
-        <div class="footer">
+        <div class="footer fixed-bottom">
             <div class="copyright">
                 <p>Copyright &copy;  <strong>M'black</strong>  &middot; {{date('Y')}}</p>
             </div>

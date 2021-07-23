@@ -21,7 +21,7 @@ use App\Http\Controllers\CandidatController;
 */
 
 Route::get('/', function () {
-    return view('layouts.exemple');
+    return view('layouts.layout');
 });
 
 

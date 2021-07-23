@@ -122,7 +122,7 @@ class StructureController extends Controller
             'type' => 'required',
             'evaluation' => 'required',
             'convention' => 'required',
-            'reference' => 'required_if:convention,oui',
+            'reference' => 'required',
             'statut'=>'required',
             'guide' => 'required'
             
@@ -143,7 +143,6 @@ class StructureController extends Controller
         $structure->statut_juridique = request('statut');
         $structure->guide = request('guide');
 
-        dd($structure);
         $structure->save();
 
         return redirect::route('structure.liste');
