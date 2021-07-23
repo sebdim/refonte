@@ -15,6 +15,10 @@ class CreateAffectationsTable extends Migration
     {
         Schema::create('affectations', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('candidat_id');
+            $table->foreign('candidat_id')->references('id')->on('candidats');
+            $table->unsignedBigInteger('structure_id');
+            $table->foreign('structure_id')->references('id')->on('structures');
             $table->timestamps();
         });
     }

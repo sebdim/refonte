@@ -17,7 +17,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="nom">Nom du candidat </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="nom" name="nom" value="{{$data -> nom}}"required>
+                                    <input type="text" class="form-control" id="nom" name="nom" value="{{$data -> nom_candidat}}"required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -32,19 +32,12 @@
                                     <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date"  value="{{$data -> date_de_naissance}}" required>  
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <label class="col-lg-4 col-form-label" for="lieu">Lieu de naissance </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="lieu" name="lieu" required>
-                                </div>
-                            </div> -->
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="sexe">Sexe </label>
                                 <div class="col-lg-6">
                                     <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Masculin">
                                     <label class="form-check-label" for="sexe">Masculin</label>
-                                    <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Féminin">
-                                    <label class="form-check-label" for="sexe">Féminin</label>
+                                    <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Féminin"                                    <label class="form-check-label" for="sexe">Féminin</label>
                                 </div>
                             </div>
                             <div class="form-group row">

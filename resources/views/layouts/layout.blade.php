@@ -59,10 +59,10 @@
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="index.html">
-                    <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/logo-compact.png" alt=""></span>
+                    <b class="logo-abbr"><img src="{{asset('images/favicon.png')}}" alt=""> </b>
+                    <span class="logo-compact">ANVT</span>
                     <span class="brand-title">
-                        <img src="./images/logo-text.png" alt="">
+                        <img src="{{asset('images/anvt.png')}}" alt="">
                     </span>
                 </a>
             </div>
@@ -262,15 +262,19 @@
         <div class="nk-sidebar">           
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
+                    <li class="nav-label"><strong>Accueil</strong></li>
                     <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Accueil</span>
+                        </a>
                         <ul aria-expanded="false">
-                            <li><a href="">Home 1</a></li>
+                            <li><a href="{{ route('home')}}">Accueil</a></li>
                         </ul>
                     </li>
                     <li class="nav-label"><strong>Personnes</strong></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Personnes ressources</span>
+                            <i class=" menu-icon"></i><span class="nav-text">Personnes ressources</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('personne.liste')}}">Liste</a></li>
@@ -279,7 +283,7 @@
                     <li class="nav-label"><strong>Candidats</strong></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Candidats</span>
+                            <i class=" menu-icon"></i><span class="nav-text">Candidats</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('candidat.liste')}}">Liste</a></li>
@@ -288,7 +292,7 @@
                     <li class="nav-label"><strong>Structures</strong></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Structures</span>
+                            <i class=" menu-icon"></i><span class="nav-text">Structures</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('structure.liste')}}">Liste</a></li>
@@ -296,17 +300,17 @@
                     </li>
                     <li class="nav-label"><strong>Affectations</strong></li>
                     <li>
-                        <!-- <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Affectations</span>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class=" menu-icon"></i><span class="nav-text">Affectations</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="">Liste</a></li>
-                        </ul> -->
+                            <li><a href="{{ route('affectation.liste')}}">Liste</a></li>
+                        </ul>
                     </li>
                     <li class="nav-label"><strong>Missions</strong></li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Missions</span>
+                            <i class=" menu-icon"></i><span class="nav-text">Missions</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('mission.liste')}}">Liste</a></li>

@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Candidat;
+use App\Models\Affectation;
+use App\Models\Structure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class AffectationController extends Controller
 {
@@ -13,7 +19,12 @@ class AffectationController extends Controller
      */
     public function index()
     {
-        //
+        $affectation = DB::table('affectations')
+        ->join('candidats', 'affectations.candidat_id', '=', 'candidats.id')
+        ->join('structures', 'affectations.structure_id', '=', 'structures.id')
+        ->select('candidats.*', 'affectations.*', 'structures.*')
+        ->get();
+        return view('pages.affectation.liste',compact(['affectation']));
     }
 
     /**
@@ -23,7 +34,11 @@ class AffectationController extends Controller
      */
     public function create()
     {
-        //
+       
+        $candidat = Candidat::all();
+        $structure = Structure::all();
+        $affectation = Affectation::all();
+        return view('pages.affectation.affectation',compact(['candidat','structure','affectation']));    
     }
 
     /**
@@ -34,7 +49,17 @@ class AffectationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'structure' => 'required',
+            'candidat' => 'required',
+        ]); 
+
+        Affectation::create([
+        'structure_id' => request('structure'),
+        'candidat_id' => request('candidat'),
+        ]);
+
+        return redirect::route('affectation.liste');
     }
 
     /**
@@ -56,7 +81,10 @@ class AffectationController extends Controller
      */
     public function edit($id)
     {
-        //
+        $candidat = Candidat::all();
+        $structure = Structure::all();
+        $data = Affectation::find($id);
+        return view('pages.affectation.edit',compact(['data','candidat','structure']));
     }
 
     /**
@@ -68,7 +96,19 @@ class AffectationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $affectation = Affectation::find($id);
+        $request->validate([
+            'structure' => 'required',
+            'candidat' => 'required',
+        ]); 
+
+
+        $affectation->candidat_id = request('candidat');
+        $affectation->structure_id = request('structure');
+
+        $affectation->save();
+
+        return redirect::route('affectation.liste');
     }
 
     /**
@@ -79,6 +119,9 @@ class AffectationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = Affectation::find($id);
+        $id -> delete();
+
+        return redirect::route('affectation.liste');
     }
 }

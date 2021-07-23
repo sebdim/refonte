@@ -7,6 +7,7 @@ use App\Http\Controllers\PersonneController;
 use App\Http\Controllers\MissionController;
 use App\Http\Controllers\SollicitationController;
 use App\Http\Controllers\CandidatController;
+use App\Http\Controllers\AffectationController;
 
 
 /*
@@ -20,9 +21,7 @@ use App\Http\Controllers\CandidatController;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.layout');
-});
+Route::get('/', function () {return view('layouts.layout');})->name('home');
 
 
 //routes for structure
@@ -66,3 +65,11 @@ Route::get('/candidat/liste',[CandidatController::class,'index'])->name('candida
 Route::get('/candidat/edit-{data}', [CandidatController::class, 'edit'])->name('candidat.edit');
 Route::post('/candidat/update-{data}', [CandidatController::class, 'update'])->name('candidat.update');
 Route::get('/candidat/delete-{data}', [CandidatController::class, 'destroy'])->name('candidat.delete');
+
+//Routes for affectation
+Route::get('/affectation', [AffectationController::class,'create'])->name('affectation.index');
+Route::post('/affectation/store', [AffectationController::class,'store'])->name('affectation.add');
+Route::get('/affectation/liste',[AffectationController::class,'index'])->name('affectation.liste');
+Route::get('/affectation/edit-{data}', [AffectationController::class, 'edit'])->name('affectation.edit');
+Route::post('/affectation/update-{data}', [AffectationController::class, 'update'])->name('affectation.update');
+Route::get('/affectation/delete-{data}', [AffectationController::class, 'destroy'])->name('affectation.delete');

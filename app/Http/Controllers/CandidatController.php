@@ -60,7 +60,7 @@ class CandidatController extends Controller
         ]); 
 
         Candidat::create([
-        'nom' => request('nom'),
+        'nom_candidat' => request('nom'),
         'prenoms' => request('prenom'),
         'date_de_naissance' => request('date'),
         'sexe' => request('sexe'),

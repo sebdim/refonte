@@ -43,7 +43,7 @@
                                             <tbody>
                                             @foreach ($candidat as $candidat )
                                             <tr>
-                                                <td>{{ $candidat -> nom }}</td>
+                                                <td>{{ $candidat -> nom_candidat }}</td>
                                                 <td>{{ $candidat -> prenoms }}</td>
                                                 <td>{{ $candidat -> date_de_naissance }}</td>
                                                 <td>{{ $candidat -> sexe }}</td>
