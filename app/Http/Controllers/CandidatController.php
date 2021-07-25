@@ -56,8 +56,8 @@ class CandidatController extends Controller
             'date_form' => 'required',
             'statut' => 'required',
             'lieu_resid' => 'required'
-            
-        ]); 
+
+        ]);
 
         Candidat::create([
         'nom_candidat' => request('nom'),
@@ -136,11 +136,11 @@ class CandidatController extends Controller
             'date_form' => 'required',
             'statut' => 'required',
             'lieu_resid' => 'required'
-            
-        ]); 
+
+        ]);
 
 
-        $candidat->nom = request('nom');
+        $candidat->nom_candidat = request('nom');
         $candidat->prenoms = request('prenom');
         $candidat->date_de_naissance = request('date');
         $candidat->sexe = request('sexe');

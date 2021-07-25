@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-body">       
+                    <div class="card-body">
                         <form class="form-valide" action="{{ route('candidat.update',$data->id)}}" method="post">
                             @csrf
                             <div class="form-group row">
@@ -29,15 +29,16 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="date">Date de naissance </label>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date"  value="{{$data -> date_de_naissance}}" required>  
+                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date"  value="{{$data -> date_de_naissance}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="sexe">Sexe </label>
                                 <div class="col-lg-6">
-                                    <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Masculin">
+                                    <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Masculin" @if($data->sexe == 'Masculin') checked @endif>
                                     <label class="form-check-label" for="sexe">Masculin</label>
-                                    <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Féminin"                                    <label class="form-check-label" for="sexe">Féminin</label>
+                                    <input class="radio-inline" type="radio" name="sexe" id="sexe" value="Féminin" @if($data->sexe == 'Féminin') checked @endif>
+                                    <label class="form-check-label" for="sexe">Féminin</label>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -49,10 +50,10 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="handicap">Etat d'handicap </label>
                                 <div class="col-lg-6">
-                                    <input class="radio-inline" type="radio" name="handicap" id="handicap" value="Oui">
+                                    <input class="radio-inline" type="radio" name="handicap" id="handicap" value="Oui" @if($data->handicap == 'Oui') checked @endif>
                                     <label class="form-check-label" for="handicap">Oui</label>
-                                    <input class="radio-inline" type="radio" name="handicap" id="handicap" value="Non">
-                                    <label class="form-check-label" for="handicap">Non</label> 
+                                    <input class="radio-inline" type="radio" name="handicap" id="handicap" value="Non" @if($data->handicap == 'Non') checked @endif>
+                                    <label class="form-check-label" for="handicap">Non</label>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -70,7 +71,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="niveau">Niveau d'étude  </label>
                                 <div class="col-lg-6">
-                                    <select class="form-control" id="niveau" name="niveau" value="{{$data -> niveau_etude}}" required> 
+                                    <select class="form-control" id="niveau" name="niveau" value="{{$data -> niveau_etude}}" required>
                                         <option value="">Choisir le niveau d'étude</option>
                                         <option value="Troisième">Troisième</option>
                                         <option value="Seconde">Seconde</option>
@@ -81,7 +82,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="diplome">Diplôme  </label>
                                 <div class="col-lg-6">
-                                    <select class="form-control" id="diplome" name="diplome" value="{{$data -> diplome}}" required> 
+                                    <select class="form-control" id="diplome" name="diplome" value="{{$data -> diplome}}" required>
                                         <option value="">Choisir le diplome </option>
                                         <option value="BEPC">BEPC</option>
                                         <option value="BAC 2">Baccalauréaut Deuxième partie</option>
@@ -122,22 +123,22 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="date">Date d'entretien </label>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_ent" value="{{$data -> date_entretien}}" required>  
+                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_ent" value="{{$data -> date_entretien}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="formation">A-t-il été formé ?? </label>
                                 <div class="col-lg-6">
-                                    <input class="radio-inline" type="radio" name="formation" id="formation" value="Oui">
+                                    <input class="radio-inline" type="radio" name="formation" id="formation" value="Oui" @if($data->formation == 'Oui') checked @endif>
                                     <label class="form-check-label" for="formation">Oui</label>
-                                    <input class="radio-inline" type="radio" name="formation" id="formation" value="Non">
+                                    <input class="radio-inline" type="radio" name="formation" id="formation" value="Non" @if($data->formatio == 'Non') checked @endif>
                                     <label class="form-check-label" for="formation">Non</label>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="date">Date de formation </label>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_form" value="{{$data -> date_formation}}" required>  
+                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_form" value="{{$data -> date_formation}}" required>
                                 </div>
                             </div>
                             <div class="form-group row">
