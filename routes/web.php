@@ -8,6 +8,7 @@ use App\Http\Controllers\MissionController;
 use App\Http\Controllers\SollicitationController;
 use App\Http\Controllers\CandidatController;
 use App\Http\Controllers\AffectationController;
+use App\Http\Controllers\VagueController;
 
 
 /*
@@ -73,3 +74,11 @@ Route::get('/affectation/liste',[AffectationController::class,'index'])->name('a
 Route::get('/affectation/edit-{data}', [AffectationController::class, 'edit'])->name('affectation.edit');
 Route::post('/affectation/update-{data}', [AffectationController::class, 'update'])->name('affectation.update');
 Route::get('/affectation/delete-{data}', [AffectationController::class, 'destroy'])->name('affectation.delete');
+
+//Routes for vague
+Route::get('/vague', [VagueController::class,'create'])->name('vague.index');
+Route::post('/vague/store', [VagueController::class,'store'])->name('vague.add');
+Route::get('/vague/liste',[VagueController::class,'index'])->name('vague.liste');
+Route::get('/vague/edit-{data}', [VagueController::class, 'edit'])->name('vague.edit');
+Route::post('/vague/update-{data}', [VagueController::class, 'update'])->name('vague.update');
+Route::get('/vague/delete-{data}', [VagueController::class, 'destroy'])->name('vague.delete');

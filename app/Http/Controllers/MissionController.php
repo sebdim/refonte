@@ -30,7 +30,7 @@ class MissionController extends Controller
     public function create()
     {
         //
-        
+
         $mission = Mission::paginate(10);
         return view('pages.mission.liste',compact(['mission']));
     }
@@ -55,7 +55,7 @@ class MissionController extends Controller
        /* if ($request->fails()) {
            return back()->withErrors($request)->withInput();
        } */
-        
+
         Mission::create([
             'titre' => request('titre'),
             'etat' => request('etat'),
@@ -108,7 +108,7 @@ class MissionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
 
         $mission = Mission::find($id);
         $request->validate([
