@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
     <!-- Custom Stylesheet -->
     <link href="{{ asset('css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('plugins/tables/css/datatable/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
     <link href="{{ asset('plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css')}}" rel="stylesheet">
     <!-- Page plugins css -->
@@ -47,7 +48,7 @@
         Preloader end
     ********************-->
 
-    
+
     <!--**********************************
         Main wrapper start
     ***********************************-->
@@ -62,7 +63,6 @@
                     <b class="logo-abbr"><img src="{{asset('images/favicon.png')}}" alt=""> </b>
                     <span class="logo-compact">ANVT</span>
                     <span class="brand-title">
-                        <img src="{{asset('images/anvt.png')}}" alt="">
                     </span>
                 </a>
             </div>
@@ -74,9 +74,9 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <div class="header">
             <div class="header-content clearfix">
-                
+
                 <div class="nav-control">
                     <div class="hamburger">
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
@@ -103,7 +103,7 @@
                             </a>
                             <div class="drop-down animated fadeIn dropdown-menu">
                                 <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">3 New Messages</span>  
+                                    <span class="">3 New Messages</span>
                                     <a href="javascript:void()" class="d-inline-block">
                                         <span class="badge badge-pill gradient-1">3</span>
                                     </a>
@@ -151,7 +151,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                         </li>
@@ -161,7 +161,7 @@
                             </a>
                             <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
                                 <div class="dropdown-content-heading d-flex justify-content-between">
-                                    <span class="">2 New Notifications</span>  
+                                    <span class="">2 New Notifications</span>
                                     <a href="javascript:void()" class="d-inline-block">
                                         <span class="badge badge-pill gradient-2">5</span>
                                     </a>
@@ -173,7 +173,7 @@
                                                 <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
                                                 <div class="notification-content">
                                                     <h6 class="notification-heading">Events near you</h6>
-                                                    <span class="notification-text">Within next 5 days</span> 
+                                                    <span class="notification-text">Within next 5 days</span>
                                                 </div>
                                             </a>
                                         </li>
@@ -182,7 +182,7 @@
                                                 <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
                                                 <div class="notification-content">
                                                     <h6 class="notification-heading">Event Started</h6>
-                                                    <span class="notification-text">One hour ago</span> 
+                                                    <span class="notification-text">One hour ago</span>
                                                 </div>
                                             </a>
                                         </li>
@@ -200,12 +200,12 @@
                                                 <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
                                                 <div class="notification-content">
                                                     <h6 class="notification-heading">Events to Join</h6>
-                                                    <span class="notification-text">After two days</span> 
+                                                    <span class="notification-text">After two days</span>
                                                 </div>
                                             </a>
                                         </li>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
                         </li>
@@ -238,7 +238,7 @@
                                                 <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
                                             </a>
                                         </li>
-                                        
+
                                         <hr class="my-2">
                                         <li>
                                             <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
@@ -259,7 +259,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="nk-sidebar">           
+        <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label"><strong>Accueil</strong></li>
@@ -330,8 +330,8 @@
         <!--**********************************
             Content body end
         ***********************************-->
-        
-        
+
+
         <!--**********************************
             Footer start
         ***********************************-->
@@ -351,7 +351,7 @@
     <!--**********************************
         Scripts
     ***********************************-->
-    
+
     <script src="{{asset('plugins/common/common.min.js')}}"></script>
     <script src="{{asset('js/custom.min.js')}}"></script>
     <script src="{{asset('js/settings.js')}}"></script>
@@ -395,6 +395,11 @@
     <script src="{{asset('js/dashboard/dashboard-1.js')}}"></script>
 
 
+    <script src="{{asset('plugins/tables/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('plugins/tables/js/datatable/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('plugins/tables/js/datatable-init/datatable-basic.min.js')}}"></script>
+
 </body>
 
 </html>
+

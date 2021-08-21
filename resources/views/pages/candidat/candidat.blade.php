@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="card-body">       
+                    <div class="card-body">
                         <form class="form-valide" action="{{ route('candidat.add')}}" method="post">
                             @csrf
                             <div class="form-group row">
@@ -29,7 +29,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="date">Date de naissance </label>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date" required>  
+                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date" required>
                                 </div>
                             </div>
                            <!--  <div class="form-group row">
@@ -59,7 +59,7 @@
                                     <input class="radio-inline" type="radio" name="handicap" id="handicap" value="Oui">
                                     <label class="form-check-label" for="handicap">Oui</label>
                                     <input class="radio-inline" type="radio" name="handicap" id="handicap" value="Non">
-                                    <label class="form-check-label" for="handicap">Non</label> 
+                                    <label class="form-check-label" for="handicap">Non</label>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -77,7 +77,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="niveau">Niveau d'étude  </label>
                                 <div class="col-lg-6">
-                                    <select class="form-control" id="niveau" name="niveau" value="" required> 
+                                    <select class="form-control" id="niveau" name="niveau" value="" required>
                                         <option value="">Choisir le niveau d'étude</option>
                                         <option value="Troisième">Troisième</option>
                                         <option value="Seconde">Seconde</option>
@@ -88,7 +88,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="diplome">Diplôme  </label>
                                 <div class="col-lg-6">
-                                    <select class="form-control" id="diplome" name="diplome" value="" required> 
+                                    <select class="form-control" id="diplome" name="diplome" value="" required>
                                         <option value="">Choisir le diplome </option>
                                         <option value="BEPC">BEPC</option>
                                         <option value="BAC 2">Baccalauréaut Deuxième partie</option>
@@ -129,7 +129,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="date">Date d'entretien </label>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_ent" required>  
+                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_ent" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -144,7 +144,7 @@
                             <div class="form-group row">
                                 <label class="col-lg-4 col-form-label" for="date">Date de formation </label>
                                 <div class="col-lg-6">
-                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_form" required>  
+                                    <input type="date" class="form-control" placeholder="2017-06-04" id="" name="date_form" required>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -163,10 +163,6 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
 </div>
 @endsection
-=======
-@endsection
->>>>>>> 916e011a5d23420d956ac83a5aadf8bcdd8d17c0

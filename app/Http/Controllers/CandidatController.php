@@ -15,8 +15,8 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        $candidat = Candidat::all();
-        return view('pages.candidat.liste',compact(['candidat']));
+        $candidats = Candidat::all();
+        return view('pages.candidat.liste',compact(['candidats']));
     }
 
     /**

@@ -15,7 +15,7 @@ class CreateCandidatsTable extends Migration
     {
         Schema::create('candidats', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
+            $table->string('nom_candidat');
             $table->string('prenoms');
             $table->date('date_de_naissance');
             $table->string('sexe');
@@ -34,7 +34,7 @@ class CreateCandidatsTable extends Migration
             $table->string('formation');
             $table->date('date_formation')->nullable();
             $table->string('statut');
-           /*  $table->string('ancienne_structure')->nullable();
+           /*$table->string('ancienne_structure')->nullable();
             $table->string('raison')->nullable();
             $table->string('decision')->nullable(); */
             $table->timestamps();
